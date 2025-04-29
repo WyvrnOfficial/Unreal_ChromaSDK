@@ -1,0 +1,26 @@
+{
+  "FileVersion": 3,
+
+  "FriendlyName": "ChromaSDKPlugin",
+  "Version": 2,
+  "VersionName": "2.2",
+  "CreatedBy": "Razer, Inc.",
+  "CreatedByURL": "https://github.com/WyvrnOfficial/Unreal_ChromaSDK/tree/UNICODE_WITHOUT_DLL",
+  "EngineVersion": "4.21.0",
+  "Description": "Plugin for Chroma",
+  "Category": "Other",
+  "EnabledByDefault": true,
+  "CanContainContent": true,
+
+  "Modules": [
+    {
+      "Name": "ChromaSDKPlugin",
+      "Type": "Runtime",
+      "LoadingPhase": "PreLoadingScreen",
+      "PlatformAllowList": [
+        "Win32",
+        "Win64"
+      ]
+    }
+  ]
+}
