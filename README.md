@@ -100,8 +100,6 @@ The SDK integration process involves the following:
 
 8. [Haptic Design](#haptic-design)
 
-9. [Modding](#modding)
-
 <a name="chroma-design"></a>
 
 ### Chroma Design
@@ -459,11 +457,11 @@ Game events can be named to add supplemental technology to your lighting experie
 int result = UChromaSDKPluginBPLibrary::SetEventName(L"Jump");
 if (result == 0)
 {
-    // Chroma event named successfully! "
+    // Chroma event named successfully!
 }
 else
 {
-    // Unable to set event name. Unexpected result!"
+    // Unable to set event name. Unexpected result!
 }
 
 // Stop haptic playback
