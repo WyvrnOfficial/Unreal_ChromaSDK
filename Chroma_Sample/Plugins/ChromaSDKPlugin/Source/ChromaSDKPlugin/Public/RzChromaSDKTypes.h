@@ -1,4 +1,4 @@
-﻿// Copyright 2017-2024 Razer, Inc. All Rights Reserved.
+﻿// Copyright 2017-2025 Razer, Inc. All Rights Reserved.
 
 #ifndef _RZCHROMASDKTYPES_H_
 #define _RZCHROMASDKTYPES_H_

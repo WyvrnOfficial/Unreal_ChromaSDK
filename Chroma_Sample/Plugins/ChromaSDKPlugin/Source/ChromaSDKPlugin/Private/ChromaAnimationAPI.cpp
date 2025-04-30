@@ -1,3 +1,5 @@
+// Copyright 2017-2025 Razer, Inc. All Rights Reserved.
+
 #include "ChromaAnimationAPI.h"
 #include "UnicodeChromaAnimationAPI.h"
 #include "ChromaLogger.h"
