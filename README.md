@@ -269,9 +269,9 @@ This document provides a guide to integrating Chroma RGB using the Chroma Unreal
 
 * [Initialize SDK](#initialize-sdk): Initialize the Chroma SDK to use the library.
 
-* [Is Active](#is-active): Check if the app/game has Chroma focus. Deprecated for the Unreal_ChromaSDK UNICODE_WITHOUD_DLL branch - always returns true. To be replaced by cached result of InitSDK method 
+* [Is Active](#is-active): [Deprecated] functionality checks if the app/game has Chroma focus. This method returns non-zero if the SDK is not initialized and active as false. Returns zero if the SDK is initialized and active as true. The recommend alternative is to use a cached result of the InitSDK method.
 
-* [Is Connected](#is-connected): Check if Chroma hardware is connected. Deprecated for the Unreal_ChromaSDK UNICODE_WITHOUD_DLL branch - always returns true. To be replaced by cached result of InitSDK method 
+* [Is Connected](#is-connected): [Deprecated] functionality checks if Chroma hardware is connected. This method returns non-zero if the SDK is not initialized and connected as false. Returns zero if the SDK is initialized and connected as true. The recommend alternative is to use a cached result of the InitSDK method.
 
 * [Play Chroma Animation](#play-chroma-animation): Playback a Chroma animation asset.
 
@@ -379,43 +379,6 @@ If the cached initialization result is not RZRESULT_SUCCESS (0), avoid further C
 •	Wasting processing time on calls that will fail or are always true
 •	Errors from failed API calls
 •	Set event play animations only if the SDK is initialized based on the cached result
-
-
-## Is Connected - Deprecated for this branch
-
-**This API call returns always true in this branch and is to be replaced by developers with the result of the InitSDK API call (0 for SUCCESS).**
-**Avoid calling IsActive and IsConnected. These functions create additional overhead and don't always work reliably with all hardware. The IsConnected function in particular can return false positives/negatives with certain devices, leading to unnecessary error paths in your code. Substitute the logic of IsConnected with InitSDK cached result.**
-
-To further reduce overhead, a title can check if supported devices are connected before showing Chroma effects. The IsConnected() method can indicate if supported devices are in use to help determine if Chroma should be active. Games often will include a menu settings option to toggle Chroma RGB support, with being on by default as an additional way that users can minimize overhead.
-
-Blueprints should define a FChromaSDKDeviceInfoType variable to pass by reference.
-
-![image_46](images/image_46.png)
-
-Check the state of the variable when the result is successful.
-
-![image_44](images/image_44.png)
-
-```c++
-FChromaSDKDeviceInfoType deviceInfoType;
-deviceInfoType.DeviceType = EChromaSDKCoreDeviceTypeEnum::DEVICE_ALL;
-int result = UChromaSDKPluginBPLibrary::IsConnected(deviceInfoType);
-if (result == 0)
-{
-    if (deviceInfoType.Connected > 0)
-    {
-        // Chroma devices are connected!
-    }
-    else
-    {
-        // "No Chroma devices are connected!";
-    }
-}
-else
-{
-    // "Unable to check for Chroma devices. Unexpected result!";
-}
-```
 
 ## Play Chroma Animation
 
