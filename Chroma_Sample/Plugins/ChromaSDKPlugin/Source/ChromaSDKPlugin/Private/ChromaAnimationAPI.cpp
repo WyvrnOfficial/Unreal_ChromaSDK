@@ -8,7 +8,6 @@
 #include <tchar.h>
 
 
-using namespace std;
 using namespace ChromaSDK::Implementation;
 
 namespace ChromaSDK {

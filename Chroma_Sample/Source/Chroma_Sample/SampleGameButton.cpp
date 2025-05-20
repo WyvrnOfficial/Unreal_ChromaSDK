@@ -9,8 +9,6 @@
 DEFINE_LOG_CATEGORY(LogChromaSampleGameButton);
 
 
-using namespace std;
-
 //USampleGameButton::USampleGameButton(const class FPostConstructInitializeProperties& PCIP) //___HACK_UE4_VERSION_4_8_OR_LESS
 //	: Super(PCIP) //___HACK_UE4_VERSION_4_8_OR_LESS
 USampleGameButton::USampleGameButton(const FObjectInitializer& ObjectInitializer) //___HACK_UE4_VERSION_4_9_OR_GREATER

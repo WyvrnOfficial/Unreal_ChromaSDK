@@ -24,7 +24,6 @@
 
 using namespace ChromaSDK;
 using namespace ChromaSDK::Implementation;
-using namespace std;
 
 HMODULE UnicodeChromaAnimationAPI::_sLibrary = nullptr;
 bool UnicodeChromaAnimationAPI::_sInvalidSignature = false;
@@ -590,7 +589,7 @@ CHROMASDK_DECLARE_METHOD_IMPL(PLUGIN_USE_PRELOADING_NAME, UsePreloadingName);
 #define CHROMASDK_VALIDATE_METHOD(Signature, FieldName) FieldName = reinterpret_cast<Signature>(reinterpret_cast<void*>(GetProcAddress(library, "Plugin" #FieldName))); \
 if (FieldName == nullptr) \
 { \
-	cerr << "Failed to find method: " << ("Plugin" #FieldName) << endl; \
+	std::cerr << "Failed to find method: " << ("Plugin" #FieldName) << std::endl; \
     return -1; \
 }
 
@@ -626,7 +625,7 @@ int UnicodeChromaAnimationAPI::InitAPI()
 
 #else
 
-	wstring path = RAZER_CHROMATIC_DLL;
+	std::wstring path = RAZER_CHROMATIC_DLL;
 
 	// 2. The system directory.Use the GetSystemDirectory function to get the path of this directory.
 
