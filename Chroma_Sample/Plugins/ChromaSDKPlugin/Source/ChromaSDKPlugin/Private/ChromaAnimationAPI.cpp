@@ -1971,7 +1971,7 @@ namespace ChromaSDK {
 			}
 			if (!_sIsInitializedAPI)
 			{
-				return RZRESULT_FAILED;
+				return static_cast<RZRESULT>(RZRESULT_FAILED);
 			}
 		}
 		if (_sInitialized)
@@ -1999,7 +1999,7 @@ namespace ChromaSDK {
 			}
 			if (!_sIsInitializedAPI)
 			{
-				return RZRESULT_FAILED;
+				return static_cast<RZRESULT>(RZRESULT_FAILED);
 			}
 		}
 		if (_sInitialized)
@@ -4610,7 +4610,7 @@ namespace ChromaSDK {
 			}
 			if (!_sIsInitializedAPI)
 			{
-				return RZRESULT_FAILED;
+				return static_cast<RZRESULT>(RZRESULT_FAILED);
 			}
 		}
 		if (_sInitialized)
@@ -4668,7 +4668,7 @@ namespace ChromaSDK {
 			}
 			if (!_sIsInitializedAPI)
 			{
-				return RZRESULT_FAILED;
+				return static_cast<RZRESULT>(RZRESULT_FAILED);
 			}
 		}
 		if (_sInitialized)
@@ -8741,7 +8741,7 @@ namespace ChromaSDK {
 	{
 		if (!_sIsInitializedAPI)
 		{
-			return RZRESULT_FAILED;
+			return static_cast<RZRESULT>(RZRESULT_FAILED);
 		}
 		if (!_sInitialized)
 		{
